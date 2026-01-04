@@ -39,9 +39,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/acquila/zmq_communication"
-Documentation = "https://github.com/acquila/zmq_communication/blob/main/README.md"
-Repository = "https://github.com/acquila/zmq_communication"
+Homepage = "https://github.com/bmasscha/acquila_zmq"
+Documentation = "https://github.com/bmasscha/acquila_zmq/blob/main/README.md"
+Repository = "https://github.com/bmasscha/acquila_zmq"
+Issues = "https://github.com/bmasscha/acquila_zmq/issues"
 
 [tool.setuptools]
 packages = ["acquila_zmq"]
