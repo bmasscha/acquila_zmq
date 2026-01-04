@@ -1,0 +1,81 @@
+# Acquila ZMQ Communication Library
+
+A Python library for ZMQ-based communication between Acquila components.
+
+## Installation
+
+### From source
+```bash
+pip install -e .
+```
+
+### From PyPI (when published)
+```bash
+pip install acquila_zmq
+```
+
+## Quick Start
+
+### 1. Start the Server
+```python
+from acquila_zmq import AcquilaServer
+
+server = AcquilaServer()
+server.start()
+```
+
+### 2. Create a Component
+```python
+from acquila_zmq import AcquilaClient
+
+def my_component_logic(client, command_data):
+    cmd = command_data.get("command")
+    if cmd == "do_something":
+        # Send feedback during execution
+        client.send_feedback(command_data, "Working...")
+        return "Done!"
+    return "Unknown Command"
+
+client = AcquilaClient()
+client.listen_and_process(physical_name="my_component", callback_function=my_component_logic)
+```
+
+### 3. Send Commands
+```python
+from acquila_zmq import AcquilaClient
+
+client = AcquilaClient()
+reply = client.send_command("my_component", "do_something", wait_for="ACK")
+print(reply.get('reply'))
+```
+
+## Features
+
+- **Server-Client Architecture**: Central server relays messages between components
+- **Feedback Support**: Components can send progress updates during long operations
+- **REPEAT UNTIL**: Built-in support for polling until a condition is met
+- **Timeout Handling**: Configurable timeouts for all operations
+- **UUID Tracking**: Every command is tracked with a unique identifier
+
+## Examples
+
+See the `examples/` directory for complete working examples:
+- `run_server.py` - Start the message relay server
+- `example_motor.py` - Example component with feedback
+- `run_script_example.py` - Example script sending commands
+
+## Configuration
+
+Default ports:
+- **Outbound (Server → Clients)**: 5555
+- **Inbound (Clients → Server)**: 5556
+
+To use custom ports:
+```python
+server = AcquilaServer(outbound_port=6000, inbound_port=6001)
+client = AcquilaClient(server_ip="192.168.1.100", outbound_port=6000, inbound_port=6001)
+```
+
+## License
+
+MIT
