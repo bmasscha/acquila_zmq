@@ -6,3 +6,22 @@ build/
 .pytest_cache/
 *.so
 *.pyd
+
+# Old duplicate files (kept for reference but not tracked)
+acquila_zmq.py
+example_motor.py
+run_script_example.py
+run_server.py
+git_status_output.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acquila_zmq"
+version = "1.0.0"
+description = "A ZMQ-based communication library for Acquila components"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Acquila Team"}
+]
+keywords = ["zmq", "communication", "acquila", "messaging", "distributed"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+
+dependencies = [
+    "pyzmq>=24.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/acquila/zmq_communication"
+Documentation = "https://github.com/acquila/zmq_communication/blob/main/README.md"
+Repository = "https://github.com/acquila/zmq_communication"
+
+[tool.setuptools]
+packages = ["acquila_zmq"]
+
+[tool.setuptools.package-data]
+acquila_zmq = ["py.typed"]

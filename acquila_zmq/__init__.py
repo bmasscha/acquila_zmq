@@ -1,3 +1,14 @@
+"""
+Acquila ZMQ Communication Library
+
+A Python library for ZMQ-based communication between Acquila components.
+Provides server-client architecture with feedback support and command tracking.
+"""
+
+__version__ = "1.0.0"
+__author__ = "Acquila Team"
+__all__ = ["AcquilaServer", "AcquilaClient", "DEFAULT_OUTBOUND_PORT", "DEFAULT_INBOUND_PORT"]
+
 import zmq
 import json
 import uuid

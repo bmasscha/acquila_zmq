@@ -4,12 +4,41 @@ A Python library for ZMQ-based communication between Acquila components.
 
 ## Installation
 
-### From source
+### Option 1: Install in Development Mode (Recommended for local projects)
+
+This allows you to use the library in your other projects while still being able to edit it:
+
 ```bash
+# Navigate to the library directory
+cd c:\code\antigravity\zmq_communication
+
+# Install in editable/development mode
 pip install -e .
 ```
 
-### From PyPI (when published)
+After this, you can import it in your **3dviewer** and **3drecon** projects:
+```python
+from acquila_zmq import AcquilaServer, AcquilaClient
+```
+
+### Option 2: Install as a Regular Package
+
+```bash
+pip install c:\code\antigravity\zmq_communication
+```
+
+### Option 3: Add to requirements.txt
+
+In your **3dviewer** or **3drecon** project's `requirements.txt`:
+```
+# Local development
+-e c:\code\antigravity\zmq_communication
+
+# Or as a regular install
+# c:\code\antigravity\zmq_communication
+```
+
+### Option 4: From PyPI (when published)
 ```bash
 pip install acquila_zmq
 ```
