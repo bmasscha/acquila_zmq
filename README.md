@@ -1,6 +1,10 @@
 # Acquila ZMQ Communication Library
 
-A Python library for ZMQ-based communication between Acquila components.
+[![Python Version](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/badge/GitHub-bmasscha%2Facquila__zmq-blue)](https://github.com/bmasscha/acquila_zmq)
+
+A Python library for ZMQ-based communication between Acquila components. Provides a simple server-client architecture with support for feedback, command tracking, and bidirectional messaging.
 
 ## Installation
 
